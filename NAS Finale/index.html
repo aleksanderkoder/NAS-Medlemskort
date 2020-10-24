@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+    <script src="libs/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="libs/sweetalert2.min.css">
+
+    <script src="libs/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="libs/materialize.min.css">
+    <script src="libs/materialize.min.js"></script>
+
+    <script type="text/javascript" src="js/javascript.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="stil.css">
+    <link rel="stylesheet" href="libs/animate.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap2.min.css">
+
+</head>
+<body>
+  <!-- Side for innlogging -->
+        <div id="sideLoggInn" class="logginn">
+          <div class="animated fadeInDown">
+          <div class="topnav">
+            <img src="img/navbar logo forside.png" alt="Navigasjonsbar" width="85%" />
+          </div>
+          
+            <img class="logo" src="img/nas logo skygge.png" alt="Norsk Arkeologisk Selskap logo" width="55%" />
+          
+            <div class="logginnskjema">
+                
+                <h1 class="medlemskortTittel">Medlemskort</h1>
+                <form id="loggForm" onsubmit="return false;">
+                  <div class="input-field col s6">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="medlemsnr" type="text" class="validate">
+                      <label for="medlemsnr">Medlemsnummer</label>
+                  </div>
+
+                  <div class="input-field col s6">
+                      <i class="material-icons prefix">lock</i>
+                      <input id="passord" type="password" class="validate">
+                      <label for="passord">Passord</label>
+                  </div>
+                  <p>
+                    <label>
+                      <input id="checkLoggInn" type="checkbox" checked />
+                      <span>Engangsinnlogging</span>
+                    </label>
+                  </p>
+
+                  <div id="loader" class="spinner-border text-danger" style="width: 3rem; height: 3rem; text-align: center;" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+
+                  <button type="submit" id="btnLoggInn" class="btn waves-effect waves-light btn-large" style="width: 50%; background-color: #8b0000;">
+                      Logg inn
+                  </button>
+                  <p id="pLoggInnTips" style="margin-top: 20px;color: red;">Har du glemt ditt passord?<br>Send en e-post til
+                    nas@arkeologi.no<br>eller <a id="linkSideMail">trykk her</a> for å få tilsendt et nytt passord på din e-postadresse.
+                  </p>
+                </form>
+                <br/>
+              <button id="linkNyttPass">Har du ikke fått passord?</button>
+            </div>
+          
+            <!-- <button id="linkBevis">test bevis side</button> -->
+
+            <!-- <img class="bildeNederst" src="img/bakgrunn fjell.png" /> -->
+        </div>
+      </div>
+<!-- Side for å opprette passord for medlemsnummer -->
+
+        <div id="sideNyBruker" class="sideNyBruker">
+          <div class="animated fadeInDown">
+          <div class="topnav">
+            <img src="img/navbar logo.png" alt="Norsk Arkeologisk Selskap logo" width="85%" />
+          </div>
+
+          <div class="underTittel">
+              <h3>Registrer passord</h3>
+          </div>
+          <form id="formRegPass" onsubmit="return false;">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="medlemsnrNyttPass" type="text" class="validate">
+                <label for="medlemsnrNyttPass">Ditt eksisterende medlemsnummer</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">lock</i>
+                <input id="passNyttPass" type="password" class="validate">
+                <label for="passNyttPass">Ditt nye passord</label>
+                <p>
+                  <label>
+                    <input id="checkRegPass" type="checkbox" />
+                    <span>Vis passord</span>
+                  </label>
+                </p>
+            </div>
+
+            <div id="loaderOpprettPass" class="spinner-border text-danger" style="width: 3rem; height: 3rem; text-align: center;" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+
+          <button id="btnNyttPass" type="submit" class="btn waves-effect waves-light btn-large" style="width: 50%; color: white;background-color: #8b0000;">
+              Registrer passord
+          </button>
+        </form>
+          <p class="info">
+            Du må allerede ha et registrert medlemsnummer for å kunne opprette et nytt passord for medlemsnummeret du oppgir.
+            <br /><br /> Hvis du ikke har fått ditt medlemsnummer, kan du sende en e-post til nas@arkeologi.no.
+          </p>
+          <a id="btnTilbakeSide2" class="waves-effect grey lighten-2 waves-light btn-small"><i class="material-icons left">arrow_back</i>Tilbake</a>
+        </div>
+    </div>
+<!-- Side for bevis -->
+        <div id="sideBevis" class="sideBevis">
+          <div class="animated fadeInDown">
+          <div class="topnav2">
+            <img src="img/navbar logo.png" alt="Norsk Arkeologisk Selskap logo" width="85%" />
+          </div>
+
+          <div class="bevisTop">
+              <div id="gyldig" class="animated infinite pulse">
+                <i id="bilde" class="material-icons green-text text-darken-3 large">check</i>
+              </div>
+              <div id="ugyldig" class="animated infinite pulse">
+                <i id="bilde2" class="material-icons red-text text-darken-3 large">close</i>
+              </div>
+
+
+          <div class="persInfo1">
+            <h4 id="persNavn"><strong>Ola Nordmann</strong></h4>
+            <p id="persStatus">test</p>
+          </div>
+        </div>
+          <div class="persInfo">
+
+            <br/>
+            <div class="underTittelBevis">
+              <h4>Medlemsinformasjon</h4>
+            </div>
+                <p id="persMedlemsnummer">12345</p>
+
+                <p id="persMedlemstype">Enkeltmedlem</p>
+
+                <p id="persBetalt">Betalt</p>
+
+                <p id="persUtlops">23.01.1998</p>
+
+        </div>
+
+        <a id="btnEndrePersInfo" style="width: 95%; height: auto; line-height: 36px; font-size: 12px; margin-bottom: 15px;" class="waves-effect grey lighten-2 waves-light btn"><i class="material-icons left md-36">assignment_ind</i>Endre personlig informasjon</a>
+
+          <br />
+
+        <a id="btnEndrePass" style="width: 95%; height: auto; line-height: 36px; font-size: 12px;" class="waves-effect grey lighten-2 waves-light btn"><i class="material-icons left md-36">create</i>Endre passord</a>
+
+          <br />
+
+        <a id="btnLoggUt" style="border: 1px solid #8b0000" class="waves-effect grey lighten-2 waves-light btn-small"><i class="material-icons left">power_settings_new</i>Logg ut</a>
+      </div>
+    </div>
+<!-- Side for endre personlig informasjon -->
+      <div id="sideEndrePersInfo" class="sideEndrePersInfo">
+        <div class="animated fadeInDown">
+        <div class="topnav">
+          <img src="img/navbar logo.png" alt="Norsk Arkeologisk Selskap logo" width="85%" />
+        </div>
+
+        <div class="underTittel">
+            <h3>Endre personlig informasjon</h3>
+        </div>
+      <form id="formEndrePersInfo" onsubmit="return false;">
+        <div class="input-field col s6">
+            <i class="material-icons prefix">email</i>
+            <input id="txtEndreEpost" type="text" class="validate">
+            <label for="txtEndreEpost">Endre din e-postadresse</label>
+        </div>
+        <p id="tip1" style="color: red; margin-bottom: 6%;"></p>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">call</i>
+            <input id="txtEndreTelefon" type="text" class="validate">
+            <label for="txtEndreTelefon">Endre ditt telefonnummer</label>
+        </div>
+        <p id="tip2" style="color: red; margin-bottom: 6%;"></p>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">location_on</i>
+            <input id="txtEndreAdresse" type="text" class="validate">
+            <label for="txtEndreAdresse">Endre din adresse</label>
+        </div>
+        <p id="tip3" style="color: red; margin-bottom: 6%;"></p>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">markunread_mailbox</i>
+            <input id="txtEndrePostnr" type="text" class="validate">
+            <label for="txtEndrePostnr">Endre ditt postnummer</label>
+        </div>
+        <p id="tip4" style="color: red; margin-bottom: 6%;"></p>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">home_work</i>
+            <input id="txtEndrePoststed" type="text" class="validate">
+            <label for="txtEndrePoststed">Endre ditt poststed</label>
+        </div>
+        <p id="tip5" style="color: red; margin-bottom: 6%;"></p>
+
+        <button id="btnLagreEndringerPersInfo" type="submit" class="btn waves-effect waves-light btn-large" style="width: 50%; color: white;background-color: #8b0000;">
+            Lagre endringer
+        </button>
+        <!-- <p class="info">Det er valgfritt å registrere personlig informasjon i applikasjonen. Disse opplysningene vil kun være synlige for et fåtall systemansvarlige i Norsk Arkeologisk Selskap, og vil kun brukes dersom det er nødvendig å kommunisere viktig informasjon til medlemmene. Du har mulighet til å fjerne denne informasjonen når som helst.</p> -->
+        <br>
+        <div id="linkEndrePersWrapper">
+          <a id="linkEndrePersInfo">Hva brukes min informasjon til?</a>
+        </div>
+      </form>
+          <br />
+        <a id="btnTilbakeSidePersInfo" class="waves-effect grey lighten-2 waves-light btn-small"><i class="material-icons left">arrow_back</i>Tilbake</a>
+      </div>
+  </div>
+<!-- Side for endring av passord for bruker -->
+      <div id="sideEndrePass" class="sideEndrePass">
+        <div class="animated fadeInDown">
+        <div class="topnav">
+          <img src="img/navbar logo.png" alt="Norsk Arkeologisk Selskap logo" width="85%" />
+        </div>
+
+        <div class="underTittel">
+            <h3>Endre passord</h3>
+        </div>
+        <form id="formEndrePass1" onsubmit="return false;">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">lock</i>
+            <input id="txtEndrePassGammelt" type="password" class="validate">
+            <label for="txtEndrePassGammelt">Skriv inn ditt gamle passord</label>
+            <p>
+              <label>
+                <input id="checkNyttPass" type="checkbox" />
+                <span>Vis passord</span>
+              </label>
+            </p>
+            <button id="btnLagreEndringerPass" type="submit" class="btn waves-effect waves-light btn-large" style="width: 50%; color: white;background-color: #8b0000;">
+                Neste
+            </button>
+        </div>
+      </form>
+
+      <form id="formEndrePass2" onsubmit="return false;">
+        <div id="txtEndrePassDiv" class="input-field col s6">
+            <i class="material-icons prefix">edit</i>
+            <input id="txtEndrePass" type="password" class="validate">
+            <label for="txtEndrePass">Skriv inn ditt nye passord</label>
+            <p>
+              <label>
+                <input id="checkNyttPass2" type="checkbox" />
+                <span>Vis passord</span>
+              </label>
+            </p>
+
+            <div id="loaderEndrePass" class="spinner-border text-danger" style="width: 3rem; height: 3rem; text-align: center;" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+
+            <button id="btnLagreEndringerPass2" type="submit" class="btn waves-effect waves-light btn-large" style="width: 50%; color: white;background-color: #8b0000;">
+                Lagre nytt passord
+            </button>
+        </div>
+      </form>
+
+          <br />
+        <a id="btnTilbakeSidePass" class="waves-effect grey lighten-2 waves-light btn-small"><i class="material-icons left">arrow_back</i>Tilbake</a>
+      </div>
+  </div>
+
+  <!-- Side for å sende mail med nytt passord -->
+  <div id="sideSendeMail" class="sideSendeMail">
+    <div class="animated fadeInDown">
+    <div class="topnav">
+      <img src="img/navbar logo.png" alt="Norsk Arkeologisk Selskap logo" width="85%" />
+    </div>
+
+    <div class="underTittel">
+        <h3>Send e-post med nytt passord</h3>
+    </div>
+    <form id="formSendeMail" onsubmit="return false;">
+      <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="txtSendeEpost" type="text" class="validate">
+          <label for="txtSendeEpost">Skriv inn din e-postadresse</label>
+      </div>
+
+      <div id="loaderSendeMail" class="spinner-border text-danger" style="width: 3rem; height: 3rem; text-align: center;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+
+    <button id="btnSendeMail" type="submit" class="btn waves-effect waves-light btn-large" style="width: 50%; color: white;background-color: #8b0000;">
+        Send nytt passord
+    </button>
+  </form>
+    <p class="info">
+      Du vil få et nytt passord sendt til deg på din e-postadresse. Denne e-postadressen må være
+      registrert hos Norsk Arkeologisk Selskap.<br/>Hvis du ikke har registrert noen e-postadresse, 
+      kan du sende en e-post til nas@arkeologi.no for å få hjelp med dette.
+    </p>
+    <a id="btnTilbakeSideMail" class="waves-effect grey lighten-2 waves-light btn-small"><i class="material-icons left">arrow_back</i>Tilbake</a>
+  </div>
+</div>
+</body>
+</html>

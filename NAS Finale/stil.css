@@ -1,0 +1,316 @@
+@font-face {
+  font-family: Cinzel; src: url("fonts/Cinzel-Regular.ttf"); 
+}
+@font-face {
+  font-family: DM Sans; src: url("fonts/DMSans-Regular.ttf");
+}
+
+html{
+  background-color: white;
+  height: 100%;
+}
+
+body {
+    background-color: white;
+    height: 100%;
+}
+
+.logginn {
+    margin: auto;
+    text-align: center;
+    /* padding-top: 2%; */
+    background-color: white;
+    margin-bottom: 0%;
+    height: 100%;
+}
+
+.logginnskjema {
+    margin: auto;
+    text-align: center;
+    width: 85%;
+    padding: 2%;
+    background-color: transparent;
+    
+}
+
+.bildeNederst{
+  width: 100%;
+  position: relative;
+  height: auto;
+  bottom: 0;
+}
+
+#tittel{
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+}
+
+#linkNyttPass, #linkSideMail{
+  color: blue;
+  border: none;
+  background-color: Transparent;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  text-decoration: underline;
+}
+
+#linkEndrePersWrapper{
+  margin-top: 10px;
+  margin-bottom: 13px;
+}
+
+#linkEndrePersInfo{
+  color: blue;
+  border: none;
+  background-color: Transparent;
+  text-decoration: underline;
+}
+
+#btnLoggInn{
+    color: white;
+}
+
+#persBetalt{
+  background-color: white;
+  border-radius: 2px;
+  width: 50%;
+  margin: 2% auto;
+  margin-bottom: 3%;
+  font-weight: bold;
+}
+#persStatus{
+  background-color: white;
+  border-radius: 2px;
+  width: 30%;
+  margin: 2% auto;
+  margin-bottom: 3%;
+  font-weight: bold;
+}
+.sideEndrePersInfo, .sideEndrePass, .sideSendeMail{
+  text-align: center;
+}
+#btnLagreEndringerPersInfo, #btnLagreEndringerPass, #btnSendeMail{
+  margin: 5%;
+}
+.underTittel{
+  width: 65%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 15%;
+  border-bottom: 1px solid #8b0000;
+  padding-top: 5%;
+}
+.underTittelBevis{
+  width: 65%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 8%;
+  border-bottom: 1px solid white;
+}
+.medlemskortTittel {
+  font-family: 'Cinzel', serif;
+  color: #8b0000;
+  font-size: 250%;
+}
+#btnEndrePersInfo, #btnEndrePass{
+  margin: 1%;
+}
+#btnLoggUt {
+  margin-top: 7%;
+  margin-bottom: 3%;
+}
+h1 {
+    font-family: 'Cinzel', serif;
+    color: #8b0000;
+}
+h3 {
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.sideBevis{
+  background-color: white;
+  text-align: center;
+  margin: auto;
+  height: 100%;
+
+}
+
+#btnTilbakeSidePersInfo, #btnTilbakeSidePass{
+  margin-bottom: 3%;
+}
+.logo {
+  padding: 3%;
+}
+#gyldig, #ugyldig{
+
+  text-align: center;
+  margin: auto;
+  margin-bottom: 2%;
+  width: 50%;
+  padding: 7%;
+  padding-top: 7%;
+}
+.persInfo{
+  box-shadow: 0 4px 2px -2px gray;
+  background-color: #8b0000;
+  color: white;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 5%;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  padding: 4%;
+  font-size: 18px;
+}
+.persInfo1{
+
+  background-color: #8b0000;
+  color: white;
+  border-top-left-radius: 90%;;
+  border-top-right-radius: 90%;
+  width: 90%;
+  margin: auto;
+  overflow-wrap: break-word;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  display: inline-block;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 12px;
+}
+#bilde {
+  margin-top: 25%;
+  margin-bottom: 5%;
+  background-color: white;
+  border-radius: 100%;
+  animation: pulse-gronn 1s infinite;
+}
+#bilde2{
+  margin-top: 25%;
+  margin-bottom: 5%;
+  background-color: white;
+  border-radius: 100%;
+  animation: pulse-rod 1s infinite;
+}
+@keyframes pulse-gronn {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(51, 217, 178, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(51, 217, 178, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
+	}
+}
+@keyframes pulse-rod {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+	}
+}
+.bevisTop{
+  background-image: url("img/bevis bilde oi.jpg");
+  background-position: center;
+  background-size: 140%;
+  background-repeat: no-repeat;
+}
+.info {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  text-align: center;
+}
+.sideNyBruker{
+  background-color: white;
+  margin: auto;
+  text-align: center;
+  height: 100%;
+
+}
+
+/* Navbar */
+.topnav {
+  background-color: #8b0000;
+  overflow: hidden;
+  box-shadow: 0 4px 2px -2px gray;
+  padding: 2%;
+  color: white;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  position: relative;
+}
+.topnav2 {
+  background-color: #8b0000;
+  overflow: hidden;
+  padding: 2%;
+  color: white;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  position: relative;
+}
+/*Modifikasjoner på Materialize:*/
+.material-icons {
+    color: #8b0000 !important;
+}
+
+    .material-icons.active {
+        color: #8b0000 !important;
+    }
+
+.input-field input[type=text] + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: grey !important;
+}
+
+.input-field input[type=text], .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid grey !important;
+    box-shadow: 0 1px 0 0 grey !important;
+}
+
+
+    .input-field input[type=password]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+        color: #8b0000 !important;
+    }
+
+    .input-field input[type=password]:focus, .materialize-textarea:focus:not([readonly]) {
+        border-bottom: 1px solid #8b0000 !important;
+        box-shadow: 0 1px 0 0 #8b0000 !important;
+    }
+
+    .input-field input[type=password] + label, .materialize-textarea:focus:not([readonly]) + label {
+        color: grey !important;
+    }
+
+    .input-field input[type=password], .materialize-textarea:focus:not([readonly]) {
+        border-bottom: 1px solid grey !important;
+        box-shadow: 0 1px 0 0 grey !important;
+    }
+
+
+        .input-field input[type=password]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+            color: #8b0000 !important;
+        }
+
+        .input-field input[type=password]:focus, .materialize-textarea:focus:not([readonly]) {
+            border-bottom: 1px solid #8b0000 !important;
+            box-shadow: 0 1px 0 0 #8b0000 !important;
+        }
+.material-icons.md-36 { font-size: 30px; }
+/*SLUTT*/
