@@ -5,7 +5,7 @@
 $(document).ready(function(){ 
 
     // Adresse til NAS API
-    const api = "https://arkeologiadmin.com/API/App/";
+    const api = "HIDDEN";
 
     $("#loaderSendeMail").hide();
     $("#sideSendeMail").hide();
